@@ -16,6 +16,7 @@ class _WaitingRoomTimestampState extends State<WaitingRoomTimestamp> {
   void initState() {
     super.initState();
     _currentTime = DateTime.now();
+    
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       setState(() {
         _currentTime = DateTime.now();
@@ -32,6 +33,7 @@ class _WaitingRoomTimestampState extends State<WaitingRoomTimestamp> {
   @override
   Widget build(BuildContext context) {
     final formattedTime = _currentTime.toString().split(':')[0];
+
     return Text(
       'Current Time: $formattedTime',
       style: const TextStyle(
